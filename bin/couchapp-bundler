@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require 'optparse'
+require "json"
+require "fileutils"
+
+
+begin
+  # Save ARGV in case someone wants to use it later
+  ORIGINAL_ARGV = ARGV.dup
+
+  options = {:hostname => "localhost", :port => 5984, :outfile => "couchapp.json"}
+
+  opts = OptionParser.new do |opts|
+    opts.banner = <<-EOF
+  Usage:
+    Starting:
+      couchapp-bundler [-h <hostname>] [-p <port>] [-d <db>] [-f <outfile filename>]
+      
+    Options:
+  EOF
+  
+    
+    opts.on("-hHOSTNAME", "--hostname HOSTNAME", "Hostname of the CouchDB server") do |x|
+      options[:hostname] = x
+    end
+    
+    opts.on("-pPORT", "--port PORT", "Port of the CouchDB server") do |x|
+      options[:port] = x
+    end
+    
+    opts.on("-dDB", "--db DB", "Database name on the CouchDB server") do |x|
+      options[:db] = x
+    end
+    
+    opts.on("-fOUTFILE", "--outfile OUTFILE", "Path of the output file") do |x|
+      options[:outfile] = x
+    end
+    
+  end
+  
+  opts.parse!
+  
+  puts "CouchappBundler options: #{options.inspect}"
+  
+rescue => err
+
+end
+
+tmp_file = "/tmp/couchapp-bundler-#{options[:db]}-#{Time.now.to_i}.json"
+cmd = "curl -o #{tmp_file} \"http://#{options[:hostname]}:#{options[:port]}/#{options[:db]}/_design/#{options[:db]}?attachments=true\""
+
+puts "CMD : #{cmd}"
+
+`#{cmd}`
+
+json = JSON.parse(open(tmp_file).read)
+
+json.delete("_rev")
+json.delete("_id")
+
+f = open(options[:outfile], "w")
+f.write(json.to_json)
+f.close
+FileUtils.rm(tmp_file)
+
