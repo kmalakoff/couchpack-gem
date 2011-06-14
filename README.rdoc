@@ -2,6 +2,9 @@
 
 This gem is a tools to help bundling couchapps for mobile devices. See https://github.com/kmalakoff/phonegap-couchbase-xplatform for an example use.
 
+  Install:
+    gem install couchapp-bundler
+
   Usage:
     couchapp-bundler [-h <hostname>] [-p <port>] [-d <couchapp>] [-a <couchapp_doc>] [-o <outfile filename>]
 
