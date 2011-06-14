@@ -1,6 +1,14 @@
 = couchapp-bundler
 
-Description goes here.
+This gem is a tools to help bundling couchapps for mobile devices. See https://github.com/kmalakoff/phonegap-couchbase-xplatform for an example use.
+
+  Usage:
+    couchapp-bundler [-h <hostname>] [-p <port>] [-d <couchapp>] [-a <couchapp_doc>] [-o <outfile filename>]
+
+What it does is strip out the "_id" and "_rev" fields so the app can be uploaded in place without being modified and generates a {couchapp_name}.JSON file. 
+
+It also strips out the "_rev" field and puts it in a {couchapp_name}.VERSION file which can be used to check for modifications to avoid reloading unmodified couchapps on the target mobile device.  
+
 
 == Contributing to couchapp-bundler
  
@@ -14,6 +22,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Stephane Bellity and Kevin Malakoff. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Stephane Bellity and Kevin Malakoff. See LICENSE.txt for further details.
 
