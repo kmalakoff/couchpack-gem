@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/couchapp-bundler",
+    "couchapp-bundler.gemspec",
     "lib/couchapp-bundler.rb",
     "test/helper.rb",
     "test/test_couchapp-bundler.rb"
