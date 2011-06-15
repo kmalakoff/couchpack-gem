@@ -52,15 +52,16 @@ rescue => err
 
 end
 
-# default is using the database name for the document and assuming that the document is a design document
+# default is using the database name for the document
 if options[:doc].nil?
-   options[:doc] = "_design/" + options[:db]
+   options[:doc] = options[:db]
 end
 
 # default is using the document name for the output file
 if options[:outfile].nil?
-   options[:outfile] = options[:doc]
+   options[:outfile] = options[:db]
 end
+options[:outfile] = options[:outfile].gsub("//", "")
 
 tmp_file = "/tmp/couchpack-#{options[:db]}-#{Time.now.to_i}.json"
 cmd = "curl -o #{tmp_file} \"http://#{options[:hostname]}:#{options[:port]}/#{options[:db]}/#{options[:doc]}?attachments=true\""
