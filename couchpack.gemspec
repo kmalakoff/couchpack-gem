@@ -4,16 +4,16 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{couchapp-bundler}
-  s.version = "0.1.1"
+  s.name = %q{couchpack}
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stephane Bellity", "Kevin Malakoff"]
-  s.date = %q{2011-06-14}
-  s.default_executable = %q{couchapp-bundler}
-  s.description = %q{CouchApp bundler utility}
+  s.date = %q{2011-06-15}
+  s.default_executable = %q{couchpack}
+  s.description = %q{Couch document packing utility}
   s.email = %q{sbellity@gmail.com}
-  s.executables = ["couchapp-bundler"]
+  s.executables = ["couchpack"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -26,20 +26,19 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "bin/couchapp-bundler",
-    "couchapp-bundler.gemspec",
-    "lib/couchapp-bundler.rb",
+    "bin/couchpack",
+    "lib/couchpack.rb",
     "test/helper.rb",
-    "test/test_couchapp-bundler.rb"
+    "test/test_couchpack.rb"
   ]
-  s.homepage = %q{http://github.com/sbellity/couchapp-bundler}
+  s.homepage = %q{http://github.com/sbellity/couchpack}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.2}
-  s.summary = %q{CouchApp bundler utility}
+  s.summary = %q{Couch document packing utility}
   s.test_files = [
     "test/helper.rb",
-    "test/test_couchapp-bundler.rb"
+    "test/test_couchpack.rb"
   ]
 
   if s.respond_to? :specification_version then

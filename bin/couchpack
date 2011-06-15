@@ -10,13 +10,13 @@ begin
   # Save ARGV in case someone wants to use it later
   ORIGINAL_ARGV = ARGV.dup
 
-  options = {:hostname => "localhost", :port => 5984, :db => "couchapp", :outfile => "couchapp"}
+  options = {:hostname => "localhost", :port => 5984, :db => "couchapp"}
 
   opts = OptionParser.new do |opts|
     opts.banner = <<-EOF
   Usage:
     Starting:
-      couchapp-bundler [-h <hostname>] [-p <port>] [-d <couchapp>] [-a <couchapp_doc>] [-o <outfile filename>]
+      couchpack [-h <hostname>] [-p <port>] [-d <database>] [-a <document>] [-o <outfile filename>]
       
     Options:
   EOF
@@ -30,11 +30,11 @@ begin
       options[:port] = x
     end
     
-    opts.on("-dDB", "--database DB", "CouchApp database name on the CouchDB server") do |x|
+    opts.on("-dDB", "--database DB", "Couch document database name on the CouchDB server") do |x|
       options[:db] = x
     end
 
-    opts.on("-aDOC", "--appdoc DOC", "CouchApp document name on the CouchDB server") do |x|
+    opts.on("-aDOC", "--adocument DOC", "Couch document name on the CouchDB server") do |x|
       options[:doc] = x
     end
     
@@ -46,19 +46,24 @@ begin
   
   opts.parse!
   
-  puts "CouchappBundler options: #{options.inspect}"
+  puts "CouchPack options: #{options.inspect}"
   
 rescue => err
 
 end
 
-# default is using the database name for the document
+# default is using the database name for the document and assuming that the document is a design document
 if options[:doc].nil?
-   options[:doc] = options[:db]
+   options[:doc] = "_design/" + options[:db]
 end
 
-tmp_file = "/tmp/couchapp-bundler-#{options[:db]}-#{Time.now.to_i}.json"
-cmd = "curl -o #{tmp_file} \"http://#{options[:hostname]}:#{options[:port]}/#{options[:db]}/_design/#{options[:doc]}?attachments=true\""
+# default is using the document name for the output file
+if options[:outfile].nil?
+   options[:outfile] = options[:doc]
+end
+
+tmp_file = "/tmp/couchpack-#{options[:db]}-#{Time.now.to_i}.json"
+cmd = "curl -o #{tmp_file} \"http://#{options[:hostname]}:#{options[:port]}/#{options[:db]}/#{options[:doc]}?attachments=true\""
 
 puts "CMD : #{cmd}"
 
@@ -83,7 +88,7 @@ if error.nil?
   f.write(version)
   f.close
 
-  puts "Success: created bundled couchapp: #{options[:outfile]}.json and version file: #{options[:outfile]}.version."
+  puts "Success: created bundled document: #{options[:outfile]}.json and version file: #{options[:outfile]}.version."
   puts "Don't forget to add them as a resource to your project!"
 # failure
 else

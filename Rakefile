@@ -12,12 +12,12 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "couchapp-bundler"
-  gem.homepage = "http://github.com/sbellity/couchapp-bundler"
+  gem.name = "couchpack"
+  gem.homepage = "http://github.com/kmalakoff/couchpack-gem"
   gem.license = "MIT"
-  gem.summary = %Q{CouchApp bundler utility}
-  gem.description = %Q{CouchApp bundler utility}
-  gem.email = "sbellity@gmail.com"
+  gem.summary = %Q{Couch document packing utility}
+  gem.description = %Q{Couch document packing utility}
+  gem.email = "xmann.intl@gmail.com"
   gem.authors = ["Stephane Bellity", "Kevin Malakoff"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
@@ -47,7 +47,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "couchapp-bundler #{version}"
+  rdoc.title = "couchpack #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

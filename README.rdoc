@@ -1,19 +1,19 @@
-= couchapp-bundler
+= couchpack
 
-This gem is a tools to help bundling couchapps for mobile devices. See https://github.com/kmalakoff/phonegap-couchbase-xplatform for an example use.
+This gem is a tools to help packing couch documents for mobile devices. See https://github.com/kmalakoff/phonegap-couchbase-xplatform for an example use.
 
   Install:
-    gem install couchapp-bundler
+    gem install couchpack
 
   Usage:
-    couchapp-bundler [-h <hostname>] [-p <port>] [-d <couchapp>] [-a <couchapp_doc>] [-o <outfile filename>]
+    couchpack [-h <hostname>] [-p <port>] [-d <database>] [-a <document>] [-o <outfile filename>]
 
-What it does is strip out the "_id" and "_rev" fields so the app can be uploaded in place without being modified and generates a {couchapp_name}.JSON file. 
+What it does is strip out the "_id" and "_rev" fields so the document can be uploaded in place without being modified and generates a {document}.JSON file. 
 
-It also strips out the "_rev" field and puts it in a {couchapp_name}.VERSION file which can be used to check for modifications to avoid reloading unmodified couchapps on the target mobile device.  
+It also strips out the "_rev" field and puts it in a {document}.VERSION file which can be used to check for modifications to avoid reloading unmodified documents on the target mobile device.  
 
 
-== Contributing to couchapp-bundler
+== Contributing to couchpack
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
