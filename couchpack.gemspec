@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.date = %q{2011-06-15}
   s.default_executable = %q{couchpack}
   s.description = %q{Couch document packing utility}
-  s.email = %q{sbellity@gmail.com}
+  s.email = %q{xmann.intl@gmail.com}
   s.executables = ["couchpack"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -27,11 +27,12 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/couchpack",
+    "couchpack.gemspec",
     "lib/couchpack.rb",
     "test/helper.rb",
     "test/test_couchpack.rb"
   ]
-  s.homepage = %q{http://github.com/sbellity/couchpack}
+  s.homepage = %q{http://github.com/kmalakoff/couchpack-gem}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.2}
