@@ -81,6 +81,15 @@ if error.nil?
   json.delete("_rev")
   json.delete("_id")
 
+  # make the directory
+  filename = File.basename(options[:outfile])
+  directoryname = File.dirname(options[:outfile])
+  puts "DIRECTORY: " + directoryname + "\n" 
+  puts "FILENAME: " + filename + "\n" 
+  if (directoryname != "")
+    FileUtils.mkdir_p(directoryname)
+  end
+
   f = open(options[:outfile] + ".json", "w")
   f.write(json.to_json)
   f.close
