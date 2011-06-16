@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stephane Bellity", "Kevin Malakoff"]
-  s.date = %q{2011-06-15}
+  s.date = %q{2011-06-16}
   s.default_executable = %q{couchpack}
-  s.description = %q{Couch document packing utility}
+  s.description = %q{Use this gem to pack your couchdb document by stripping out the "_id" and "_rev" fields, and putting the "_rev" in a .version file. To be used with https://github.com/kmalakoff/phonegap-couchbase-xplatform}
   s.email = %q{xmann.intl@gmail.com}
   s.executables = ["couchpack"]
   s.extra_rdoc_files = [

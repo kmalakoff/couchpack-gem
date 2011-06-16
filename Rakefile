@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/kmalakoff/couchpack-gem"
   gem.license = "MIT"
   gem.summary = %Q{Couch document packing utility}
-  gem.description = %Q{Couch document packing utility}
+  gem.description = %Q{Use this gem to pack your couchdb document by stripping out the "_id" and "_rev" fields, and putting the "_rev" in a .version file. To be used with https://github.com/kmalakoff/phonegap-couchbase-xplatform}
   gem.email = "xmann.intl@gmail.com"
   gem.authors = ["Stephane Bellity", "Kevin Malakoff"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
