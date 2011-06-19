@@ -20,6 +20,7 @@ GEM
     typhoeus (0.2.4)
       mime-types
       mime-types
+    yard (0.7.2)
 
 PLATFORMS
   ruby
@@ -33,3 +34,4 @@ DEPENDENCIES
   shoulda
   thor (~> 0.14.0)
   typhoeus (~> 0.2)
+  yard
