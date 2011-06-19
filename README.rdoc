@@ -6,7 +6,8 @@ This gem is a tools to help packing couch documents for mobile devices. See http
     gem install couchpack
 
   Usage:
-    couchpack [-h <hostname>] [-p <port>] [-d <database>] [-a <document>] [-o <outfile filename>]
+    couchpack document [DOCUMENT_URL] [OUTFILE] --auto
+    Note: the optional --auto flag watches the couchdb document for changes and automatically repacks when changes are detected.
 
 What it does is strip out the "_id" and "_rev" fields so the document can be uploaded in place without being modified and generates a {document}.JSON file. 
 
@@ -25,5 +26,5 @@ It also strips out the "_rev" field and puts it in a {document}.VERSION file whi
 
 == Copyright
 
-Copyright (c) 2011 Stephane Bellity and Kevin Malakoff. See LICENSE.txt for further details.
+Copyright (c) 2011 Kevin Malakoff. See LICENSE.txt for further details.
 
