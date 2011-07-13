@@ -4,7 +4,7 @@ source "http://rubygems.org"
 gem "json", "> 1.1.5"
 gem "typhoeus", "~>0.2"
 gem "thor", "~>0.14.0"
-gem "couchwatcher", "~>0.1.0"
+gem "couchwatcher", ">= 0.1.1"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

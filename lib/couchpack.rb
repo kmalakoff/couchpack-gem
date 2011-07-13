@@ -18,13 +18,13 @@ module CouchPack
 
     def self.pack_document(document_url, outfile)
       
-#      puts "GET #{document_url}"
       document_url_with_attachments = document_url
       document_url_with_attachments += "/" if !document_url_with_attachments.end_with?("/")
       document_url_with_attachments += "?attachments=true"
+#      puts "GET #{document_url_with_attachments}"
 
-      response = Typhoeus::Request.get(document_url_with_attachments)
-#      puts "Response: #{response.code} #{JSON.parse(response.body).inspect}"
+      response = Typhoeus::Request.get(document_url_with_attachments, :headers => {:Accept => "application/json"})
+#      puts ("Response code: #{response.code} body: #{response.body.inspect}")
       json = response.code == 200 ? JSON.parse(response.body) : nil
 
       error = json.nil? || json["error"]
@@ -60,9 +60,13 @@ module CouchPack
 
       # failure
       else
-        say "couchpack failed: couch responded with: #{json.inspect} for document url: #{document_url}", :red
+        # zero response means the server is not running
+        if response.code == 0
+          say "couchpack failed: it looks like your server is not running for document url: #{document_url}. Please start it up and then you can relax.", :red
+        else
+          say "couchpack failed: couch responded with: #{json.inspect} for document url: #{document_url}", :red
+        end
       end
     end
   end
-  
 end
