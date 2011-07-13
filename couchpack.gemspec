@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/couchpack",
+    "couchpack-0.2.2.gem",
     "couchpack.gemspec",
     "lib/couchpack.rb",
     "lib/couchpack/cli.rb",
