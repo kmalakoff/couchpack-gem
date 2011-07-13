@@ -8,12 +8,11 @@ Gem::Specification.new do |s|
   s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Kevin Malakoff"]
-  s.date = %q{2011-06-19}
-  s.default_executable = %q{couchpack}
+  s.authors = [%q{Kevin Malakoff}]
+  s.date = %q{2011-07-13}
   s.description = %q{Use this gem to pack your couchdb document by stripping out the "_id" and "_rev" fields, and putting the "_rev" in a .version file. To be used with https://github.com/kmalakoff/phonegap-couchbase-xplatform}
   s.email = %q{xmann.intl@gmail.com}
-  s.executables = ["couchpack"]
+  s.executables = [%q{couchpack}]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -34,9 +33,9 @@ Gem::Specification.new do |s|
     "test/test_couchpack.rb"
   ]
   s.homepage = %q{http://github.com/kmalakoff/couchpack-gem}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.5}
   s.summary = %q{Couch document packing utility}
   s.test_files = [
     "test/helper.rb",
@@ -50,7 +49,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<json>, ["> 1.1.5"])
       s.add_runtime_dependency(%q<typhoeus>, ["~> 0.2"])
       s.add_runtime_dependency(%q<thor>, ["~> 0.14.0"])
-      s.add_runtime_dependency(%q<couchwatcher>, ["~> 0.1.0"])
+      s.add_runtime_dependency(%q<couchwatcher>, [">= 0.1.1"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
@@ -65,7 +64,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>, ["> 1.1.5"])
       s.add_dependency(%q<typhoeus>, ["~> 0.2"])
       s.add_dependency(%q<thor>, ["~> 0.14.0"])
-      s.add_dependency(%q<couchwatcher>, ["~> 0.1.0"])
+      s.add_dependency(%q<couchwatcher>, [">= 0.1.1"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
@@ -81,7 +80,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<json>, ["> 1.1.5"])
     s.add_dependency(%q<typhoeus>, ["~> 0.2"])
     s.add_dependency(%q<thor>, ["~> 0.14.0"])
-    s.add_dependency(%q<couchwatcher>, ["~> 0.1.0"])
+    s.add_dependency(%q<couchwatcher>, [">= 0.1.1"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
