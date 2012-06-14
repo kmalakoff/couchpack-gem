@@ -26,5 +26,5 @@ It also strips out the "_rev" field and puts it in a {document}.VERSION file whi
 
 == Copyright
 
-Copyright (c) 2011 Kevin Malakoff. See LICENSE.txt for further details.
+Copyright (c) 2011, 2012 Kevin Malakoff. See LICENSE.txt for further details.
 
